@@ -1,0 +1,19 @@
+parameters:
+  appDir: %appDir%
+  wwwDir: %appDir%/../www
+
+services:
+  - App\Core\RouterFactory::createRouter
+  - App\Model\KrajRepository
+  - App\Model\OkresRepository
+  - App\Model\ObecRepository
+
+application:
+  errorPresenter: Nette:Error
+  mapping:
+    *: App\Presenters\*Presenter
+
+database:
+  dsn: 'mysql:host=127.0.0.1;dbname=seznam_obci;charset=utf8mb4'
+  user: 'root'
+  password: ''
