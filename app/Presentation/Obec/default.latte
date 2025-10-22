@@ -3,7 +3,7 @@
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a n:href="Kraj:default, krajId=>null">Kraje</a></li>
-      <li class="breadcrumb-item"><a n:href="Okres:default">{$kraj->Kraj}</a></li>
+      <li class="breadcrumb-item"><a n:href="Okres:default, krajId => $kraj->ID">{$kraj->Kraj}</a></li>
       <li class="breadcrumb-item active" aria-current="page">{$okres['Okres']}</li>
     </ol>
   </nav>
@@ -24,7 +24,7 @@
   </div>
 
   <div class="mt-3 d-flex gap-2">
-    <a class="btn btn-outline-secondary" n:href="Okres:default, okresId => null">← Zpět na okresy</a>
+    <a class="btn btn-outline-secondary" n:href="Okres:default, krajId => $kraj->ID, okresId => null">← Zpět na okresy</a>
     <a class="btn btn-outline-secondary" n:href="Kraj:default, krajId => null, okresId => null">← Zpět na kraje</a>
   </div>
 {/block}
